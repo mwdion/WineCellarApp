@@ -26,5 +26,13 @@ app.factory('wines', function(){
         }
       }
     },
+    remove: function(id){
+      var results = [];
+      for (var i = 0; i < wines.length; i++) {
+        if ( wines[i].id !== parseInt(id,10)) 
+          results.push(wines[i]);
+      }
+      wines = results;
+    },
   }
 });
