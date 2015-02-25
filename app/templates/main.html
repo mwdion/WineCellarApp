@@ -3,6 +3,14 @@
 <h2>Wine Inventory</h2>
 <ul>
   <li ng-repeat="wine in wines">
-    <a ui-sref="show({ id: wine.id})">{{wine.name}}</a>  
+    <a ui-sref="show({ id: wine.id})">{{wine.grape}}</a>  
   </li>
 </ul>
+Search: <input ng-model="searchWine">
+<table id="searchWineResults">
+  <tr><th>Grape</th><th>Style</th></tr>
+  <tr ng-repeat="wine in wines | filter:searchWine">
+    <td>{{wine.grape}}</td>
+    <td>{{wine.style}}</td>
+  </tr>
+</table>

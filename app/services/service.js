@@ -1,11 +1,22 @@
 app.factory('wines', function(){
   var wines = [];
+  var wine = {
+    name: [],
+    quantity:[],
+    vintage:[],
+    country: [],
+    region: [],
+    purveyor: [],
+    grape: [],
+    style: []
+  };
   var c = 0;
   return {
     inventory: function() {
       return wines;
     },
     add: function(wine) {
+      console.log(wine);
       wine.id = c;
       wines.push(wine);
       c++;
