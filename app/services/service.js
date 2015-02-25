@@ -9,6 +9,15 @@ app.factory('wines', function(){
       wine.id = c;
       wines.push(wine);
       c++;
-    }
+    },
+    get: function(id) {
+      var wine = null;
+      for(var i = 0; i < wines.length; i++) {
+        if (wines[i].id === parseInt(id, 10)) {
+          wine = wines[i];
+        }
+      }
+      return wine;
+    },
   }
 });

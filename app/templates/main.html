@@ -3,6 +3,6 @@
 <h2>Wine Inventory</h2>
 <ul>
   <li ng-repeat="wine in wines">
-    {{wine.name}}
+    <a ui-sref="show({ id: wine.id})">{{wine.name}}</a>  
   </li>
 </ul>
