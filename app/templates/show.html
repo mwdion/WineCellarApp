@@ -1,6 +1,12 @@
 <h2>Wine Info:</h2>
 <p>ID: {{wine.id}}</p>
-<p>{{wine.grape}}</p>
+<p>Quantity: {{wine.quantity}}</p>
+<p>Vintage: {{wine.vintage}}</p>
+<p>Grape: {{wine.grape}}</p>
+<p>Country: {{wine.country}}</p>
+<p>Region: {{wine.region}}</p>
+<p>Purveyor: {{wine.purveyor}}</p>
+<p>Style: {{wine.style}}</p>
 <a ui-sref="edit(wine)" class="btn btn-primary">Edit Wine</a>
 <button class="btn btn-danger" ng-click="remove(wine)">Delete</button>
 <a ui-sref="main" class="btn btn-success">Home</a>

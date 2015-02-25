@@ -1,16 +1,27 @@
 <h1>Wine Cellar</h1>
 <a ui-sref="newwine">New Wine</a>
-<h2>Wine Inventory</h2>
-<ul>
-  <li ng-repeat="wine in wines">
-    <a ui-sref="show({ id: wine.id})">{{wine.grape}}</a>  
-  </li>
-</ul>
-Search: <input ng-model="searchWine">
-<table id="searchWineResults">
-  <tr><th>Grape</th><th>Style</th></tr>
+<h2>Wine Inventory Search</h2>
+Search: <input class="form-control" ng-model="searchWine">
+<table class="table" id="searchWineResults">
+  <tr>
+    <th>Quantity</th>
+    <th>Vintage</th>
+    <th>Grape</th>
+    <th>Country</th>
+    <th>Region</th>
+    <th>Purveyor</th>
+    <th>Style</th>
+  </tr>
   <tr ng-repeat="wine in wines | filter:searchWine">
-    <td>{{wine.grape}}</td>
-    <td>{{wine.style}}</td>
+    <td><a ui-sref="show({ id: wine.id})">{{wine.quantity}}</a></td>
+    <td><a ui-sref="show({ id: wine.id})">{{wine.vintage}}</a></td>
+    <td><a ui-sref="show({ id: wine.id})">{{wine.grape}}</a></td>
+    <td><a ui-sref="show({ id: wine.id})">{{wine.country}}</a></td>
+    <td><a ui-sref="show({ id: wine.id})">{{wine.region}}</a></td>
+    <td><a ui-sref="show({ id: wine.id})">{{wine.purveyor}}</a></td>
+    <td><a ui-sref="show({ id: wine.id})">{{wine.style}}</a></td>
   </tr>
 </table>
+
+
+

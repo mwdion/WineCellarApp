@@ -1,4 +1,20 @@
 <h2>Edit Wine</h2>
-<input ng-model="wine.grape">{{wine.grape}}
-<button class="btn btn-primary" ng-click="update(wine)">Update</button>
+<form class="form" ng-submit="update(wine)">
+  <input class="form-control" type="number" ng-model="wine.quantity" name="quantity" min="0" max="100" placeholder="How many bottles do you have?" required>
+  <select class="form-control" ng-model="wine.style" placeholder="Select style of wine..." required>
+    <option>Select One</option>
+    <option value = "Red" >Red</option>
+    <option value = "White" >White</option>
+    <option value = "Sparkling" >Sparkling</option>
+    <option value = "Rose" >Rose</option>
+  </select>
+  <input class="form-control" type="year"ng-model="wine.vintage" placeholder="Add vintage here..." required>
+  <input class="form-control" ng-model="wine.grape" placeholder="Add grape varietal here..." required>
+  <input class="form-control" ng-model="wine.country" placeholder="Add country here..." required>
+  <input class="form-control" ng-model="wine.region" placeholder="Add region here..." required>
+  <input class="form-control" ng-model="wine.purveyor" placeholder="Add purveyor here..." required>
+  <button class="btn btn-primary btn-block" type="submit">Update</button>
+</form>
 <a ui-sref="main">Cancel</a>
+
+
