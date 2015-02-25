@@ -1,1 +1,8 @@
 <h1>Wine Cellar</h1>
+<a ui-sref="newwine">New Wine</a>
+<h2>Wine Inventory</h2>
+<ul>
+  <li ng-repeat="wine in wines">
+    {{wine.name}}
+  </li>
+</ul>

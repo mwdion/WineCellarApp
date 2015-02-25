@@ -1,3 +1,3 @@
-app.controller('MainCtrl', function($scope){
-
+app.controller('MainCtrl', function($scope, wines){
+  $scope.wines = wines.inventory();
   });
