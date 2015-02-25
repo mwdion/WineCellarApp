@@ -19,5 +19,12 @@ app.factory('wines', function(){
       }
       return wine;
     },
+    update: function(wine) {
+      for(var i = 0;i < wines.length; i++) {
+        if ( wine.id === wines[i].id) {
+          wines[i] = wine;
+        }
+      }
+    },
   }
 });

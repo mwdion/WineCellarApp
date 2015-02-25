@@ -16,5 +16,10 @@ var app = angular.module('wineApp',['ui.router'])
         templateUrl: "app/templates/show.html",
         controller: "ShowCtrl"
       })
+      .state('edit',{
+        url: '/edit/:id',
+        templateUrl: "app/templates/edit.html",
+        controller: "EditCtrl"
+      })
       $urlRouterProvider.otherwise('/');
   });
