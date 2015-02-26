@@ -6,10 +6,13 @@ app.constant('$db', new PouchDB('wines'))
       });
     });
     $scope.remove = function(wine){
-    //remove wine from list
-      if (confirm('are you sure?')) {
-        wines.remove(wine.id);
-        $state.go('main');
-      }
-    }
+      $db.get($stateParams.id).then(function(wine){
+      return $db.remove(wine);
+    }).catch(function(err){
+  });
+    $state.go('main');
+  } 
 })
+
+
+

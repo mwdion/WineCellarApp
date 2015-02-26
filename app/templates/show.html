@@ -7,6 +7,6 @@
 <p>Region: {{wine.region}}</p>
 <p>Purveyor: {{wine.purveyor}}</p>
 <p>Style: {{wine.style}}</p>
-<a ui-sref="edit(wine)" class="btn btn-primary">Edit Wine</a>
+<a ui-sref="edit({ id: wine._id})" class="btn btn-primary">Edit Wine</a>
 <button class="btn btn-danger" ng-click="remove(wine)">Delete</button>
 <a ui-sref="main" class="btn btn-success">Home</a>

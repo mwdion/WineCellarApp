@@ -27,4 +27,3 @@ app.constant('$db', new PouchDB('wines'))
     }; 
 });
 
-
