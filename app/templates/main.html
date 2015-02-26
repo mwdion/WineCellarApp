@@ -10,17 +10,20 @@
     <th>Region</th>
     <th>Purveyor</th>
     <th>Style</th>
+    <th>ID</th>
   </tr>
   <tr ng-repeat="wine in wines | filter:searchWine">
-    <td><a ui-sref="show({ id: wine.id})">{{wine.quantity}}</a></td>
-    <td><a ui-sref="show({ id: wine.id})">{{wine.vintage}}</a></td>
-    <td><a ui-sref="show({ id: wine.id})">{{wine.grape}}</a></td>
-    <td><a ui-sref="show({ id: wine.id})">{{wine.country}}</a></td>
-    <td><a ui-sref="show({ id: wine.id})">{{wine.region}}</a></td>
-    <td><a ui-sref="show({ id: wine.id})">{{wine.purveyor}}</a></td>
-    <td><a ui-sref="show({ id: wine.id})">{{wine.style}}</a></td>
+    <td><a ui-sref="show({ id: wine._id})">{{wine.quantity}}</a></td>
+    <td><a ui-sref="show({ id: wine._id})">{{wine.vintage}}</a></td>
+    <td><a ui-sref="show({ id: wine._id})">{{wine.grape}}</a></td>
+    <td><a ui-sref="show({ id: wine._id})">{{wine.country}}</a></td>
+    <td><a ui-sref="show({ id: wine._id})">{{wine.region}}</a></td>
+    <td><a ui-sref="show({ id: wine._id})">{{wine.purveyor}}</a></td>
+    <td><a ui-sref="show({ id: wine._id})">{{wine.style}}</a></td>
+    <td><a ui-sref="show({ id: wine._id})">{{wine._id}}</a></td>
   </tr>
 </table>
+
 
 
 

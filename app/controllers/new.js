@@ -1,7 +1,7 @@
-app.controller('NewCtrl', function($scope, $state, wines){
+app.controller('NewCtrl', function($scope, $state, $db){
   $scope.add = function(wine){
     //add wine to inventory
-    wines.add(wine);
+    $db.post(wine);
     //redirect back to main
     $state.go('main')
     };

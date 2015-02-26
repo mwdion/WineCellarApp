@@ -1,6 +1,7 @@
-app.factory('wines', function(){
+app.factory($db, function(){
   var wines = [];
   var wine = {
+    id: Math.uuid(),
     name: [],
     quantity:[],
     vintage:[],
@@ -10,40 +11,22 @@ app.factory('wines', function(){
     grape: [],
     style: []
   };
-  var c = 0;
   return {
     inventory: function() {
-      return wines;
+      $db.allDocs({include_docs: true})
+      .then(function(res){
+        $scope.$apply(function(){
+          $scope.wines = res.rows.map(function(row){ return row.doc; });
+        });
+      });
     },
-    add: function(wine) {
-      console.log(wine);
-      wine.id = c;
-      wines.push(wine);
-      c++;
-    },
-    get: function(id) {
-      var wine = null;
-      for(var i = 0; i < wines.length; i++) {
-        if (wines[i].id === parseInt(id, 10)) {
-          wine = wines[i];
-        }
-      }
-      return wine;
-    },
-    update: function(wine) {
-      for(var i = 0;i < wines.length; i++) {
-        if ( wine.id === wines[i].id) {
-          wines[i] = wine;
-        }
-      }
-    },
-    remove: function(id){
-      var results = [];
-      for (var i = 0; i < wines.length; i++) {
-        if ( wines[i].id !== parseInt(id,10)) 
-          results.push(wines[i]);
-      }
-      wines = results;
-    },
-  }
+    $scope.add = function(wine) {
+      $scope.wines.push(wine);
+      $scope.wine = null;
+      $db.post(wine, function(err, res) {
+        if (err) { console.log(err); }
+        wine._id = res.id;
+        wine._rev = res.rev;
+      });
+    }; 
 });
