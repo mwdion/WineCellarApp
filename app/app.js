@@ -21,5 +21,10 @@ var app = angular.module('wineApp',['ui.router'])
         templateUrl: "app/templates/edit.html",
         controller: "EditCtrl"
       })
+      .state('newtaste', {
+        url: '/newtaste',
+        templateUrl: "app/templates/newtaste.html",
+        controller: 'NewTasteCtrl'
+      })
       $urlRouterProvider.otherwise('/');
   });

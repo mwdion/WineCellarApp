@@ -10,6 +10,10 @@
     <ul class="nav navbar-nav">
       <li class="active"><a ui-sref="main"class="glyphicon glyphicon-home">Home</a></li>
       <li><a class="glyphicon glyphicon-plus"ui-sref="newwine">Wine</a></li>
+      <li><a class="glyphicon glyphicon-cutlery" ui-sref="newwine">Restaurants</a></li>
+      <li><a class="glyphicon glyphicon-glass"ui-sref="newwine">MyWines</a></li>
+      <li><a class="glyphicon glyphicon-heart-empty"ui-sref="newwine">Tastes</a></li>
+      <li><a class="glyphicon glyphicon-refresh"ui-sref="newtaste">NewTaste</a></li>
         </ul>
       </li>
     </ul>
@@ -24,8 +28,10 @@
   <script src="//cdn.jsdelivr.net/pouchdb/3.3.1/pouchdb.min.js"></script>
   <script src= "app/controllers/main.js"></script>
   <script src= "app/controllers/new.js"></script>
-  <script src= "app/services/service.js"></script>
+  <script src= "app/services/wines.js"></script>
+  <script src= "app/services/tastes.js"></script>
   <script src= "app/controllers/show.js"></script>
   <script src= "app/controllers/edit.js"></script>
+  <script src= "app/controllers/newtaste.js"></script>
 </body>
 </html>
