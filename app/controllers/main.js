@@ -16,14 +16,5 @@ app.constant('$db', new PouchDB('wines'))
       }).on('change', inventory);
     }
     checkChanges();
-    $scope.add = function(wine) {
-      $scope.wines.push(wine);
-      $scope.wine = null;
-      $db.post(wine, function(err, res) {
-        if (err) { console.log(err); }
-        wine._id = res.id;
-        wine._rev = res.rev;
-      });
-    }; 
 });
 

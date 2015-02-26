@@ -1,4 +1,4 @@
-app.factory($db, function(){
+app.factory('wines', function(){
   var wines = [];
   var wine = {
     id: Math.uuid(),
@@ -11,6 +11,4 @@ app.factory($db, function(){
     grape: [],
     style: []
   };
-  return {
-    
 });
