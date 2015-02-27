@@ -1,5 +1,4 @@
-app.constant('$db', new PouchDB('wines'))
-  .controller('ShowCtrl', function($scope, $state, $stateParams, $state, $db){
+app.controller('ShowCtrl', function($scope, $state, $stateParams, $state, $db){
     $db.get($stateParams.id).then(function(wine){
       $scope.$apply(function(){
       $scope.wine = wine;

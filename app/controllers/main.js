@@ -1,7 +1,7 @@
 app.constant('$db', new PouchDB('wines'))
   .controller('MainCtrl', function($scope, $db) {
     function inventory() {
-      $db.allDocs({include_docs: true})
+      $db.allDocs({include_docs: true, descending: true})
         .then(function(res) {
           $scope.$apply(function() {
             $scope.wines = res.rows.map(function(row) { return row.doc; }); 
